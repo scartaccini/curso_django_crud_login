@@ -12,4 +12,4 @@ def tasks(request):
 def tasks_completed(request):
     #busca por usuario y si datecompleted no es nulo
     tasks = Task.objects.filter(user=request.user, datecompleted__isnull=False).order_by('-datecompleted')
-    return render(request, 'tasks_completed.html', {"tasks": tasks})
+    return render(request, 'tasks.html', {"tasks": tasks})
