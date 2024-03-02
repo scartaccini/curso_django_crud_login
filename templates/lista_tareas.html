@@ -1,12 +1,16 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>tasks</h1>
+{% if pendientes%}
+<h1>{{pendientes}}</h1>
+{% else %}
+<h1>{{realizadas}}</h1>
+<h1>{% endif %}</h1>
 
 <ul>
   {% for task in tasks %}
   <li>
-    <a href="{% url 'task_detail' task.id %}">
+    <a href="{% url 'opciones_tarea' task.id %}">
       {% if task.important %}
       <strong>{{task.title}}</strong>
       {% else %}

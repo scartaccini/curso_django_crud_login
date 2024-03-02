@@ -2,11 +2,11 @@ from django.urls import path
 from tareas import views
 
 urlpatterns = [
-path('tasks/', views.tasks, name='tasks'),
-path('tasks_completed/', views.tasks_completed, name='tasks_completed'),
-path('create_task/', views.create_task, name='create_task'),
-path('tasks/<int:task_id>', views.task_detail, name='task_detail'),
-path('taks/complete/<int:task_id>/', views.complete_task, name='complete_task'),
-path('tasks/delete/<int:task_id>/', views.delete_task, name='delete_task'),
+path('tareas_pendientes/', views.tareas_pendientes, name='tareas_pendientes'),
+path('tareas_completadas/', views.tareas_completadas, name='tareas_completadas'),
+path('crear_tarea/', views.crear_tarea, name='crear_tarea'),
+path('opciones_tarea/<int:task_id>', views.opciones_tarea, name='opciones_tarea'),
+path('marcar_tarea_completada/<int:task_id>/', views.marcar_tarea_completada, name='marcar_tarea_completada'),
+path('eliminar_tarea/<int:task_id>/', views.eliminar_tarea, name='eliminar_tarea'),
 ]
 
