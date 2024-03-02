@@ -20,13 +20,14 @@
         {% if user.is_authenticated %}
         <li class="nav-item">
           <a href="{% url 'tasks_completed' %}" class="nav-link"
-            >TAREAS COMPLETAS</a
-          >
+            >TAREAS COMPLETAS</a>
         </li>
         <li class="nav-item">
           <a href="{% url 'tasks' %}" class="nav-link">TAREAS</a>
         </li>
-
+        <li class="nav-item">
+          <a href="{% url 'create_task' %}" class="nav-link">Create Task</a>
+        </li>
         <li class="nav-item">
           <a class="nav-link" href="/logout">LOGOUT</a>
         </li>
