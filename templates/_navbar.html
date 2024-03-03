@@ -1,6 +1,10 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
-    <a class="navbar-brand" href="/">Navbar</a>
+    <a class="navbar-brand" href="/">
+      {% if user.is_authenticated %}
+      {{user}}
+      {% endif %}
+    </a>
     <button
       class="navbar-toggler"
       type="button"
@@ -13,10 +17,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a href="{% url 'index' %}" class="nav-link">INICIO</a>
-        </li>
+      <ul class="navbar-nav ms-auto">        
         {% if user.is_authenticated %}
         <li class="nav-item">
           <a href="{% url 'tareas_completadas' %}" class="nav-link"
@@ -33,6 +34,9 @@
           <a class="nav-link" href="/logout">LOGOUT</a>
         </li>
         {% else %}
+        <li class="nav-item">
+          <a href="{% url 'index' %}" class="nav-link">INICIO</a>
+        </li>
         <li class="nav-item">
           <a href="/signin" class="nav-link">LOGIN</a>
         </li>

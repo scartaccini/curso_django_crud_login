@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+<div class="container">
 {{task.title}}
 
 {{error}}
@@ -10,23 +10,23 @@
   {% csrf_token %}
   {{form.as_p}}
 
-  <button>
+  <button class="btn btn-primary btn-block"> 
     ACTUALIZAR
   </button>
 </form>
-
+<br>
 <form action="{% url 'marcar_tarea_completada' task.id %}" method="POST">
   {% csrf_token %}
-  <button>
-    MARCAR TAREA COMO COMPLETADA
+  <button class="btn btn-primary btn-block">
+    TAREA COMO COMPLETADA
   </button>
 </form>
-
+<br>
 <form action="{% url 'eliminar_tarea' task.id %}" method="POST">
   {% csrf_token %}
-  <button>
+  <button class="btn btn-primary btn-block">
     ELIMINAR
   </button>
 </form>
-
+</div>
 {% endblock %}
