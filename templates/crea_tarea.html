@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
-
+{% block titulo %}
+<h5>CREAR TAREA</h5>
+{% endblock %}
 {% block content %}
-
-<h1>CREAR TAREA</h1>
-
 {{error}}
+<div class="text-center">
 <form action="" method="POST">
   {% csrf_token %}
-  {{form}}
-
-  <button class="btn btn-primary">CREAR</button>
+  {{form.as_p}}
+<button class="btn btn-primary">CREAR</button>
 </form>
+</div>
 {% endblock %}

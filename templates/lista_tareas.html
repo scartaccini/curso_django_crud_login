@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
-{% block content %}
-
+{% block titulo %}
 {% if pendientes%}
-<h1>{{pendientes}}</h1>
+<h5>{{pendientes}}</h5>
 {% else %}
-<h1>{{realizadas}}</h1>
-<h1>{% endif %}</h1>
-
+<h5>{{realizadas}}</h5>
+<h5>{% endif %}</h5>
+{% endblock %}
+{% block content %}
 <ul>
   {% for task in tasks %}
   <li>

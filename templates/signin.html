@@ -1,19 +1,11 @@
 {% extends "base.html" %}
-
 {% block content %}
-
-<h1>SIGNIN</h1>
-
-<p>
 {{error}}
-</p>
-
+<div class="card bg-dark text-white" style="margin-top: 10%;">
 <form action="/signin/" method="POST">
   {% csrf_token %}
-  {{form.as_p}}
-  <button class="btn btn-primary">
-    Signin
-  </button>
+  {{form.as_p}}  
 </form>
-
+</div>
+<button class="btn btn-primary">Signin</button>
 {% endblock %}
