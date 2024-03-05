@@ -4,27 +4,24 @@
 {% endblock %}
 {% block content %}
 {{error}}
-<div class="text-center">
+<div class="card bg-dark text-white text-center" style="margin-top: 10%;">
 <form method="POST">
-  {% csrf_token %}
-  {{form.as_p}}
-  <button class="btn btn-primary btn-block"> 
-    ACTUALIZAR
-  </button>
+{% csrf_token %}
+{{form.as_p}}
+<button class="btn btn-primary btn-block">ACTUALIZAR</button>
 </form>
+</div>
 <br>
+<div class="text-center">
 <form action="{% url 'marcar_tarea_completada' task.id %}" method="POST">
-  {% csrf_token %}
-  <button class="btn btn-primary btn-block">
-    TAREA COMO COMPLETADA
-  </button>
+{% csrf_token %}
+<button class="btn btn-primary btn-block">TAREA COMO COMPLETADA</button>
 </form>
+</div>
 <br>
+<div class="text-center">
 <form action="{% url 'eliminar_tarea' task.id %}" method="POST">
-  {% csrf_token %}
-  <button class="btn btn-primary btn-block">
-    ELIMINAR
-  </button>
-</form>
+{% csrf_token %}
+<button class="btn btn-primary btn-block">ELIMINAR</button>
 </div>
 {% endblock %}

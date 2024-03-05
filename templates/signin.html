@@ -3,9 +3,9 @@
 {{error}}
 <div class="card bg-dark text-white" style="margin-top: 10%;">
 <form action="/signin/" method="POST">
-  {% csrf_token %}
-  {{form.as_p}}  
+{% csrf_token %}
+{{form.as_p}}  
+<div class="text-center"><button class="btn btn-primary">Signin</button></div>
 </form>
 </div>
-<button class="btn btn-primary">Signin</button>
 {% endblock %}
